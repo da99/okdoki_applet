@@ -13,8 +13,14 @@ Install & Use
 
     var OK = require("okdoki_applet").Applet;
 
-    // Use as a regular JSON applet.
-    OK(['form', [ ... ]]).run().results;
+    // Use as a regular JSON applet,
+    var results = OK(['form', [ ... ]]).run().results;
+
+    // To get the HTML
+    results.html
+
+    // To get the JS:
+    results.js
 
 
 

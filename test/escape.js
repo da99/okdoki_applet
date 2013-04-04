@@ -4,7 +4,7 @@ var _     = require('underscore')
 , unhtml  = require('unhtml')
 , special = require('special-html')
 , assert  = require('assert')
-, Ok      = require('json_applet').Ok
+, Ok      = require('okdoki_applet/lib/escape').Escape
 , BRACKET = "";
 ;
 
