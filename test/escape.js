@@ -8,7 +8,7 @@ var _     = require('underscore')
 , BRACKET = "";
 ;
 
-describe( 'Ok.escape', function () {
+describe( 'Escape', function () {
 
   it( 'does not re-escape already escaped text mixed with HTML', function () {
     var h = "<p>Hi</p>";
@@ -29,7 +29,7 @@ describe( 'Ok.escape', function () {
 
 }); // === end desc
 
-describe( 'Ok.escape_uri', function () {
+describe( 'Escape.uri', function () {
 
   it( 'normalizes address', function () {
     var s = "hTTp://wWw.test.com/";
