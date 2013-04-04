@@ -1,0 +1,35 @@
+{
+  "name": "okdoki_applet",
+  "version": "0.0.0",
+  "description": "OKdoki extensions to json_applet.",
+  "main": "lib/okdoki_applet.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/da99/okdoki_applet.git"
+  },
+  "keywords": [
+    "da99",
+    "okdoki",
+    "json_applet"
+  ],
+  "dependencies": {
+    "underscore": "1.x.x"
+    , "json_applet": "x.x.x"
+    , "unhtml": "x.x.x"
+    , "special-html": "x.x.x"
+    , "underscore.string": "x.x.x"
+    , "entities": "x.x.x"
+    , "uri-js": "x.x.x"
+    , "cheerio": "x.x.x"
+  },
+  "author": "da99",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "743f30682e26c65fc10a063cc36df1da2c12afe1"
+}
