@@ -11,7 +11,10 @@ Install & Use
 
     npm install okdoki_applet
 
+    var OK = require("okdoki_applet").Applet;
+
     // Use as a regular JSON applet.
+    OK(['form', [ ... ]]).run().results;
 
 
 
