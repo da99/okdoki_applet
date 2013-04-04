@@ -4,7 +4,7 @@ var _     = require('underscore')
 , unhtml  = require('unhtml')
 , special = require('special-html')
 , assert  = require('assert')
-, Ok      = require('okdoki_applet/lib/escape').Escape
+, E       = require('okdoki_applet/lib/escape').Escape
 , BRACKET = "";
 ;
 
@@ -14,17 +14,17 @@ describe( 'Ok.escape', function () {
     var h = "<p>Hi</p>";
     var e = _s.escapeHTML(h);
     var o = e + h;
-    assert.equal(Ok.escape(o), _s.escapeHTML(h + h));
+    assert.equal(E(o), _s.escapeHTML(h + h));
   });
 
   it( 'escapes special chars: "Hello ©®∆"', function () {
     var s = "Hello & World ©®∆";
     var t = "Hello &amp; World &#169;&#174;&#8710;";
-    assert.equal(Ok.escape(s), t);
+    assert.equal(E(s), t);
   });
 
   it( 'escapes all 70 different combos of "<"', function () {
-    assert.equal(_.uniq(Ok.escape(BRACKET.trim()).split(/\s+/)).join(' '), "&lt; %3C");
+    assert.equal(_.uniq(E(BRACKET.trim()).split(/\s+/)).join(' '), "&lt; %3C");
   });
 
 }); // === end desc
@@ -33,27 +33,27 @@ describe( 'Ok.escape_uri', function () {
 
   it( 'normalizes address', function () {
     var s = "hTTp://wWw.test.com/";
-    assert.equal(Ok.escape_uri(s), s.toLowerCase());
+    assert.equal(E.uri(s), s.toLowerCase());
   });
 
   it( 'returns null if path contains: <', function () {
     var s = "http://www.test.com/<something/";
-    assert.equal(Ok.escape_uri(s), null);
+    assert.equal(E.uri(s), null);
   });
 
   it( 'returns null if path contains HTML entities', function () {
     var s = "http://6&#9;6.000146.0x7.147/";
-    assert.equal(Ok.escape_uri(s), null);
+    assert.equal(E.uri(s), null);
   });
 
   it( 'returns null if path contains HTML entities', function () {
     var s = "http://www.test.com/&nbsp;s/";
-    assert.equal(Ok.escape_uri(s), null);
+    assert.equal(E.uri(s), null);
   });
 
   it( 'returns null if query string contains HTML entities', function () {
     var s = "http://www.test.com/s/test?t&nbsp;test";
-    assert.equal(Ok.escape_uri(s), null);
+    assert.equal(E.uri(s), null);
   });
 
 }); // === end desc
