@@ -1,7 +1,7 @@
 
 var _     = require('underscore')
 , assert  = require('assert')
-, Ok      = require('ok_slang').Ok
+, Ok      = require('okdoki_applet').Applet
 , cheerio = require('cheerio');
 ;
 
@@ -9,14 +9,14 @@ var to_html = function (str) {
   var r = Ok(str);
   if (r.error)
     throw r.error;
-  return r.html;
+  return r.results.html;
 };
 
 var to_js = function (str) {
   var r = Ok(str);
   if (r.error)
     throw r.error;
-  return r.js;
+  return r.results.js;
 };
 
 describe( 'ok_slang', function () {
@@ -25,18 +25,18 @@ describe( 'ok_slang', function () {
 
     it( 'returns error if invalid chars in name', function () {
       var html = [
-        text_box, ['my name', "one line"], "enter wrong name"
+        text_input, ['my name', "one line"], "enter wrong name"
       ];
 
-      assert.equal(Ok(html).error.message, "Invalid chars in text_box id: my name");
+      assert.equal(Ok(html).error.message, "Invalid chars in text_input id: my name");
     });
 
     it( 'returns error if unknown element', function () {
       var slang = [
-        text_boxy, ['my_name', "one line"], "enter name"
+        text_inputy, ['my_name', "one line"], "enter name"
       ];
 
-      assert.equal(Ok(slang).error.message, "Unknown element: text_boxy");
+      assert.equal(Ok(slang).error.message, "Unknown element: text_inputy");
     });
 
   }); // === end desc
