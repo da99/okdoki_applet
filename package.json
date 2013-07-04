@@ -1,6 +1,6 @@
 {
   "name": "okdoki_applet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "OKdoki extensions to json_applet.",
   "main": "lib/okdoki_applet.js",
   "directories": {
