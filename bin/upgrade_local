@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# -*- bash -*-
+#
+#
+set -u -e -o pipefail
+
+
+mkdir -p test/vendor
+cp /gems/www_applet/lib/www_applet.js test/vendor/www_applet.js
+
+
